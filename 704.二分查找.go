@@ -4,6 +4,7 @@
  * [704] 二分查找
  */
 package leetcode
+
 // @lc code=start
 func search(nums []int, target int) int {
 	if len(nums) == 0 {
@@ -30,5 +31,5 @@ func search(nums []int, target int) int {
 	}
 	return left
 }
-// @lc code=end
 
+// @lc code=end

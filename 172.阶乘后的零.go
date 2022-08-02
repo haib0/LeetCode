@@ -9,7 +9,6 @@ package leetcode
 func trailingZeroes(n int) int {
 	ans := 0
 
-
 	for n >= 5 {
 		n = n / 5
 		ans += n
@@ -17,5 +16,5 @@ func trailingZeroes(n int) int {
 
 	return ans
 }
-// @lc code=end
 
+// @lc code=end

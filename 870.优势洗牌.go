@@ -22,13 +22,13 @@ func advantageCount(nums1 []int, nums2 []int) []int {
 	})
 
 	ans := make([]int, len(nums1))
-	head, tail := 0, len(nums1) - 1
+	head, tail := 0, len(nums1)-1
 
 	for _, v := range nums2p {
 		if nums1[head] > v[1] {
 			ans[v[0]] = nums1[head]
 			head++
-		}else {
+		} else {
 			ans[v[0]] = nums1[tail]
 			tail--
 		}

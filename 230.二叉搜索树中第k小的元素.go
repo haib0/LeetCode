@@ -36,6 +36,4 @@ func kthSmallest(root *TreeNode, k int) int {
 	return ans
 }
 
-
-
 // @lc code=end

@@ -12,7 +12,7 @@ func letterCombinations(digits string) []string {
 	if digits == "" {
 		return nil
 	}
-	
+
 	m := map[string]string{
 		"2": "abc",
 		"3": "def",

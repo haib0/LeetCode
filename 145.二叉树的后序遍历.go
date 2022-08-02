@@ -18,7 +18,7 @@ package leetcode
 
 func postorderTraversal(root *TreeNode) []int {
 	var ans []int
-	
+
 	if root == nil {
 		return ans
 	}

@@ -33,7 +33,7 @@ func canPartitionKSubsets(nums []int, k int) bool {
 	n := len(nums)
 	var bucket = make([]b698, k)
 	var backtracking func(startNum int)
-	
+
 	backtracking = func(startNum int) {
 		if ans {
 			return

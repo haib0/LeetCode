@@ -4,8 +4,8 @@
  * [1038] 从二叉搜索树到更大和树
  */
 
- package leetcode
- 
+package leetcode
+
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -15,6 +15,7 @@
  *     Right *TreeNode
  * }
  */
+
 func bstToGst(root *TreeNode) *TreeNode {
 	curr := 0
 	var postOrder func(this *TreeNode)
@@ -31,5 +32,5 @@ func bstToGst(root *TreeNode) *TreeNode {
 	postOrder(root)
 	return root
 }
-// @lc code=end
 
+// @lc code=end

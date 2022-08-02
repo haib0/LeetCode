@@ -90,7 +90,7 @@ func (this *LFUCache) Put(key int, value int) {
 			delete(this.keyToVal, h.key)
 			delete(this.keyToFreq, h.key)
 		}
-		
+
 		this.keyToVal[key] = value
 		this.keyToFreq[key] = 1
 		lm1 := this.freqToLM[1]
