@@ -43,11 +43,9 @@ func openLock(deadends []string, target string) int {
 		n := len(queue)
 		for ii := 0; ii < n; ii++ {
 			curr := queue[ii]
-			visited[curr] = true
 			if deadendsM[curr] {
 				continue
 			}
-
 			if curr == target {
 				return step
 			}
@@ -56,11 +54,13 @@ func openLock(deadends []string, target string) int {
 				nextPlus := plusOne(curr, i)
 				if !visited[nextPlus] {
 					queue = append(queue, nextPlus)
+					visited[nextPlus] = true
 				}
 
 				nextMinus := minusOne(curr, i)
 				if !visited[nextMinus] {
 					queue = append(queue, nextMinus)
+					visited[nextMinus] = true
 				}
 			}
 		}
