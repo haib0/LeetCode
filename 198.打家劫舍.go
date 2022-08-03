@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func rob(nums []int) int {
+func rob198(nums []int) int {
 	n := len(nums)
 	if n == 1 {
 		return nums[0]
