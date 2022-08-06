@@ -9,9 +9,9 @@ import "sort"
 
 // @lc code=start
 
-//  给你⼀个整数数组 nums 和整数 k,返回最⼤和 sum,
-//  满⾜ 存在 i < j 使得 nums[i] + nums[j] = sum 且 sum < k
-//  如果没有满⾜此等式的 i, j 存在, 则返回 -1
+// 给你⼀个整数数组 nums 和整数 k,返回最⼤和 sum,
+// 满⾜ 存在 i < j 使得 nums[i] + nums[j] = sum 且 sum < k
+// 如果没有满⾜此等式的 i, j 存在, 则返回 -1
 func twoSumLessThanK(nums []int, k int) int {
 	sort.Slice(nums, func(i, j int) bool {
 		return nums[i] < nums[j]
