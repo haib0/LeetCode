@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func maxProfit(prices []int) int {
+func maxProfit1(prices []int) int {
 	var ans int
 	minb := prices[0]
 	for _, v := range prices {
