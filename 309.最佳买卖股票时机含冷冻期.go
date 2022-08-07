@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func maxProfit(prices []int) int {
+func maxProfitf(prices []int) int {
 	max := func(a, b int) int {
 		if a < b {
 			return b
