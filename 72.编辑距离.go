@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func minDistance(word1 string, word2 string) int {
+func minDistance72(word1 string, word2 string) int {
 	min3 := func(a, b, c int) int {
 		if a < b && a < c {
 			return a
