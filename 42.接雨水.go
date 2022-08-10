@@ -7,6 +7,21 @@ package leetcode
 
 // @lc code=start
 func trap(height []int) int {
+	var maxInt = func(nums ...int) int {
+		if len(nums) == 0 {
+			panic(nil)
+		}
+
+		x := nums[0]
+		for _, v := range nums[1:] {
+			if v > x {
+				x = v
+			}
+		}
+
+		return x
+	}
+
 	l, r := 0, len(height)-1
 	maxl, maxr := height[l], height[r]
 
@@ -23,14 +38,6 @@ func trap(height []int) int {
 		}
 	}
 	return ans
-}
-
-func maxInt(x, y int) int {
-	if x < y {
-		return y
-	}
-
-	return x
 }
 
 // @lc code=end
