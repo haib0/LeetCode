@@ -10,11 +10,9 @@ package leetcode
 // 位运算-异或
 func singleNumber(nums []int) int {
 	var ans int
-
 	for _, v := range nums {
 		ans ^= v
 	}
-
 	return ans
 }
 
