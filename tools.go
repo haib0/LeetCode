@@ -11,6 +11,7 @@ var minInt = func(nums ...int) int {
 			x = v
 		}
 	}
+
 	return x
 }
 
@@ -27,4 +28,13 @@ var maxInt = func(nums ...int) int {
 	}
 
 	return x
+}
+
+var PowInt = func(x, a int) int {
+	y := 1
+	for i := 0; i < a; i++ {
+		y = y * x
+	}
+
+	return y
 }
