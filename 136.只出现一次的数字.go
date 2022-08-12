@@ -7,7 +7,7 @@ package leetcode
 
 // @lc code=start
 
-// 位运算-异或
+// 位运算: 异或
 func singleNumber(nums []int) int {
 	var ans int
 	for _, v := range nums {
