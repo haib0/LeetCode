@@ -8,19 +8,19 @@ package leetcode
 import "math/rand"
 
 // @lc code=start
-type Solution struct {
+type Solution398 struct {
 	nm map[int][]int
 }
 
-func Constructor(nums []int) Solution {
+func Constructor398(nums []int) Solution398 {
 	nm := make(map[int][]int)
 	for i, v := range nums {
 		nm[v] = append(nm[v], i)
 	}
-	return Solution{nm: nm}
+	return Solution398{nm: nm}
 }
 
-func (this *Solution) Pick(target int) int {
+func (this *Solution398) Pick(target int) int {
 	l := len(this.nm[target])
 	return this.nm[target][rand.Intn(l)]
 }
