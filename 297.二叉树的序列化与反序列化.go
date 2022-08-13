@@ -26,7 +26,7 @@ type Codec struct {
 	NULL rune
 }
 
-func Constructor() Codec {
+func Constructor297() Codec {
 	return Codec{SEP: ',', NULL: '#'}
 }
 
