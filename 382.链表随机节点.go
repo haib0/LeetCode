@@ -19,7 +19,7 @@ type Solution382 struct {
 	Head *ListNode
 }
 
-func Constructor(head *ListNode) Solution382 {
+func Constructor382(head *ListNode) Solution382 {
 	return Solution382{
 		Head: head,
 	}
