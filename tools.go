@@ -1,5 +1,12 @@
 package leetcode
 
+var AbsInt = func(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}
+
 var minInt = func(nums ...int) int {
 	if len(nums) == 0 {
 		panic(nil)
