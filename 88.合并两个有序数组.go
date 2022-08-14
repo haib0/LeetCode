@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func merge(nums1 []int, m int, nums2 []int, n int) {
+func merge88(nums1 []int, m int, nums2 []int, n int) {
 	p1 := m - 1
 	p2 := n - 1
 
