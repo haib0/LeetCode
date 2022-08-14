@@ -14,7 +14,8 @@ package leetcode
  *     Right *TreeNode
  * }
  */
-func minDepth(root *TreeNode) int {
+
+func minDepthBST(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -39,7 +40,7 @@ func minDepth(root *TreeNode) int {
 	return ans
 }
 
-func minDepth1(root *TreeNode) int {
+func minDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

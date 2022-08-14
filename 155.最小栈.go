@@ -21,6 +21,12 @@ func Constructor155() MinStack {
 }
 
 func (this *MinStack) Push(val int) {
+	min := func(x, y int) int {
+		if x < y {
+			return x
+		}
+		return y
+	}
 	this.stack = append(this.stack, val)
 	this.minStack = append(this.minStack, min(this.minStack[len(this.minStack)-1], val))
 }
@@ -36,13 +42,6 @@ func (this *MinStack) Top() int {
 
 func (this *MinStack) GetMin() int {
 	return this.minStack[len(this.minStack)-1]
-}
-
-func min(x, y int) int {
-	if x < y {
-		return x
-	}
-	return y
 }
 
 /**

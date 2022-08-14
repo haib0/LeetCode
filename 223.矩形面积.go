@@ -6,7 +6,15 @@
 package leetcode
 
 // @lc code=start
+
 func computeArea(ax1 int, ay1 int, ax2 int, ay2 int, bx1 int, by1 int, bx2 int, by2 int) int {
+	abs := func(n int) int {
+		if n < 0 {
+			return -n
+		}
+		return n
+	}
+
 	x_a := abs(ax2 - ax1)
 	y_a := abs(ay2 - ay1)
 
@@ -34,13 +42,6 @@ func computeArea(ax1 int, ay1 int, ax2 int, ay2 int, bx1 int, by1 int, bx2 int, 
 	}
 
 	return x_a*y_a + x_b*y_b - area
-}
-
-func abs(n int) int {
-	if n < 0 {
-		return -n
-	}
-	return n
 }
 
 // @lc code=end

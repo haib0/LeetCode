@@ -7,6 +7,7 @@
 package leetcode
 
 // @lc code=start
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -15,7 +16,22 @@ package leetcode
  *     Right *TreeNode
  * }
  */
+
 func maxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	leftMax := maxDepth(root.Left)
+	rightMax := maxDepth(root.Right)
+
+	if leftMax < rightMax {
+		return 1 + rightMax
+	}
+	return 1 + leftMax
+}
+
+func maxDepthT(root *TreeNode) int {
 	var ans, depth int
 
 	var traverse func(node *TreeNode)
@@ -40,21 +56,7 @@ func maxDepth(root *TreeNode) int {
 	return ans
 }
 
-func maxDepth1(root *TreeNode) int {
-	if root == nil {
-		return 0
-	}
-
-	leftMax := maxDepth(root.Left)
-	rightMax := maxDepth(root.Right)
-
-	if leftMax < rightMax {
-		return 1 + rightMax
-	}
-	return 1 + leftMax
-}
-
-func maxDepth2(root *TreeNode) int {
+func maxDepthBST(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}

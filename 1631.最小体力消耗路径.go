@@ -15,6 +15,12 @@ import (
 // @lc code=start
 
 func minimumEffortPath(heights [][]int) int {
+	absInt := func(x int) int {
+		if x < 0 {
+			return -x
+		}
+		return x
+	}
 
 	m, n := len(heights), len(heights[0])
 	var costs = make([][]int, m)
@@ -48,7 +54,7 @@ func minimumEffortPath(heights [][]int) int {
 				continue
 			}
 
-			c := absInt1631(heights[x][y] - heights[curr.x][curr.y])
+			c := absInt(heights[x][y] - heights[curr.x][curr.y])
 			if c < curr.cost {
 				c = curr.cost
 			}
@@ -64,13 +70,6 @@ func minimumEffortPath(heights [][]int) int {
 
 	log.Println(costs)
 	return costs[m-1][n-1]
-}
-
-func absInt1631(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
 }
 
 type State1631 struct {

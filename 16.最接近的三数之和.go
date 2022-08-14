@@ -8,7 +8,15 @@ package leetcode
 import "sort"
 
 // @lc code=start
+
 func threeSumClosest(nums []int, target int) int {
+	abs := func(n int) int {
+		if n < 0 {
+			return -n
+		}
+		return n
+	}
+
 	ans := nums[0] + nums[1] + nums[2]
 	sort.Slice(nums, func(i, j int) bool {
 		return nums[i] < nums[j]
@@ -34,19 +42,12 @@ func threeSumClosest(nums []int, target int) int {
 				return sum
 			}
 
-			if da < abs16(ans-target) {
+			if da < abs(ans-target) {
 				ans = sum
 			}
 		}
 	}
 	return ans
-}
-
-func abs16(n int) int {
-	if n < 0 {
-		return -n
-	}
-	return n
 }
 
 // @lc code=end

@@ -7,6 +7,13 @@ package leetcode
 
 // @lc code=start
 func integerReplacement(n int) int {
+	min := func(i1, i2 int) int {
+		if i1 < i2 {
+			return i1
+		}
+		return i2
+	}
+
 	if n == 1 {
 		return 0
 	}
@@ -16,14 +23,8 @@ func integerReplacement(n int) int {
 	if n%2 == 0 {
 		return 1 + integerReplacement(n/2)
 	} else {
-		return 1 + min1(integerReplacement(n+1), integerReplacement(n-1))
+		return 1 + min(integerReplacement(n+1), integerReplacement(n-1))
 	}
-}
-func min1(i1, i2 int) int {
-	if i1 < i2 {
-		return i1
-	}
-	return i2
 }
 
 // @lc code=end

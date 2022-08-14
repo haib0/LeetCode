@@ -10,50 +10,50 @@ import "sort"
 
 // @lc code=start
 func minCostConnectPoints(points [][]int) int {
+	absInt := func(x int) int {
+		if x < 0 {
+			return -x
+		}
+		return x
+	}
+
+	minimumCost := func(n int, conections [][]int) int {
+		// Kruskal 最小生成树算法
+		var mst int
+
+		uf := NewUnionFind(n + 1)
+		sort.Slice(conections, func(i, j int) bool {
+			return conections[i][2] < conections[j][2]
+		})
+
+		for _, edge := range conections {
+			u, v := edge[0], edge[1]
+
+			if uf.IsConnected(u, v) {
+				continue
+			}
+
+			uf.Union(u, v)
+			mst += edge[2]
+		}
+
+		if uf.Count() != 2 {
+			return -1
+		}
+		return mst
+	}
+
 	var edges [][]int
 
 	n := len(points)
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
-			w := absInt1584(points[i][0]-points[j][0]) + absInt1584(points[i][1]-points[j][1])
+			w := absInt(points[i][0]-points[j][0]) + absInt(points[i][1]-points[j][1])
 			edges = append(edges, []int{i, j, w})
 		}
 	}
 
-	return minimumCost1584(n, edges)
-}
-
-func absInt1584(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
-func minimumCost1584(n int, conections [][]int) int {
-	// Kruskal 最小生成树算法
-	var mst int
-
-	uf := NewUnionFind(n + 1)
-	sort.Slice(conections, func(i, j int) bool {
-		return conections[i][2] < conections[j][2]
-	})
-
-	for _, edge := range conections {
-		u, v := edge[0], edge[1]
-
-		if uf.IsConnected(u, v) {
-			continue
-		}
-
-		uf.Union(u, v)
-		mst += edge[2]
-	}
-
-	if uf.Count() != 2 {
-		return -1
-	}
-	return mst
+	return minimumCost(n, edges)
 }
 
 // type UnionFind struct {
