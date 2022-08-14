@@ -16,16 +16,14 @@ func eraseOverlapIntervals(intervals [][]int) int {
 		return intervals[i][1] < intervals[j][1]
 	})
 	ans := 0
-	l, r := intervals[0][0], intervals[0][1]
+	r := intervals[0][1]
 	for _, v := range intervals[1:] {
-		if v[0] < r && v[1] > l {
+		if v[0] < r {
 			ans++
-
 		} else {
 			r = v[1]
 		}
 	}
-
 	return ans
 }
 
