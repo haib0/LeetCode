@@ -8,6 +8,8 @@ package leetcode
 import "sort"
 
 // @lc code=start
+
+// like 435.无重叠区间
 func findMinArrowShots(points [][]int) int {
 	sort.Slice(points, func(i, j int) bool {
 		return points[i][1] < points[j][1]
