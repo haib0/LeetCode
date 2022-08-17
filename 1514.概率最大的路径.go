@@ -74,7 +74,7 @@ func dijkstra1514(start, end int, graph [][]neighbor1514) float64 {
 	minDist[start] = 0
 
 	for h.Len() > 0 {
-		p := heap.Pop(h).(State).id
+		p := heap.Pop(h).(State1514).id
 		if visited[p] {
 			continue
 		}
@@ -91,7 +91,7 @@ func dijkstra1514(start, end int, graph [][]neighbor1514) float64 {
 			}
 			if minDist[neighbor1514.id] == -1 || d > minDist[neighbor1514.id] {
 				minDist[neighbor1514.id] = d
-				heap.Push(h, State{
+				heap.Push(h, State1514{
 					id: neighbor1514.id, dist: d,
 				})
 			}

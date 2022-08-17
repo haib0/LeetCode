@@ -1,6 +1,6 @@
 package leetcode
 
-func QuickSort[T any](s []T, fn func(i, j int) bool) {
+func QuickSort[T comparable](s []T, fn func(i, j int) bool) {
 	partition := func(lo, hi int) int {
 		i, j := lo+1, hi
 		for i <= j {
