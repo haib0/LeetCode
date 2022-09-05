@@ -20,36 +20,24 @@ import (
  * }
  */
 
-var ans652 []*TreeNode
-var nodeFreq map[string]int
-
 func findDuplicateSubtrees(root *TreeNode) []*TreeNode {
-	ans652 = []*TreeNode{}
-	nodeFreq = make(map[string]int)
-
-	traverse652(root)
-
-	return ans652
-}
-
-// 序列化
-func traverse652(root *TreeNode) string {
-	if root == nil {
-		return "#"
+	var ans []*TreeNode
+	freq := make(map[string]int)
+	var traverse func(root *TreeNode) string
+	traverse = func(root *TreeNode) string {
+		if root == nil {
+			return "#"
+		}
+		l, r := traverse(root.Left), traverse(root.Right)
+		x := l + "," + r + "," + strconv.Itoa(root.Val)
+		if i := freq[x]; i == 1 {
+			ans = append(ans, root)
+		}
+		freq[x]++
+		return x
 	}
-
-	l := traverse652(root.Left)
-	r := traverse652(root.Right)
-
-	subTree := l + "," + r + "," + strconv.Itoa(root.Val)
-
-	freq := nodeFreq[subTree]
-	if freq == 1 {
-		ans652 = append(ans652, root)
-	}
-	nodeFreq[subTree] = freq + 1
-
-	return subTree
+	traverse(root)
+	return ans
 }
 
 // @lc code=end
