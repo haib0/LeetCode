@@ -15,6 +15,18 @@ package leetcode
  */
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
+	// reverse [a, b)
+	reverse := func(a, b *ListNode) *ListNode {
+		pre, curr := &ListNode{}, a
+		for curr != b {
+			next := curr.Next
+			curr.Next = pre
+			pre = curr
+			curr = next
+		}
+		return pre
+	}
+
 	a, b := head, head
 	for i := 0; i < k; i++ {
 		if b == nil {
@@ -27,20 +39,6 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 	a.Next = reverseKGroup(b, k)
 	return newHead
 
-}
-
-// reverse [a, b)
-func reverse(a, b *ListNode) *ListNode {
-	pre, curr := &ListNode{}, a
-
-	for curr != b {
-		next := curr.Next
-		curr.Next = pre
-		pre = curr
-		curr = next
-	}
-
-	return pre
 }
 
 // @lc code=end
