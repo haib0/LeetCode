@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func isPalindrome(x int) bool {
+func isPalindromeNum(x int) bool {
 	if x < 0 || (x%10 == 0 && x != 0) {
 		return false
 	}
