@@ -5,11 +5,10 @@
  */
 package leetcode
 
-import "sort"
-
 // @lc code=start
 
 func longestValidParentheses(s string) int {
+	var ans int
 	n := len(s)
 	var stack []int
 	dp := make([]int, n+1)
@@ -32,16 +31,15 @@ func longestValidParentheses(s string) int {
 			len := i - il + 1 + dp[il]
 			dp[i+1] = len
 
+			if ans < len {
+				ans = len
+			}
 		default:
 			return -1
 		}
 	}
 
-	sort.Slice(dp, func(i, j int) bool {
-		return dp[i] > dp[j]
-	})
-
-	return dp[0]
+	return ans
 }
 
 // @lc code=end

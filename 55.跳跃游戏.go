@@ -6,6 +6,7 @@
 package leetcode
 
 // @lc code=start
+
 func canJump(nums []int) bool {
 	var maxPos int
 	n := len(nums)
@@ -18,7 +19,6 @@ func canJump(nums []int) bool {
 			return false
 		}
 	}
-
 	return true
 }
 

@@ -6,6 +6,7 @@
 package leetcode
 
 // @lc code=start
+
 func maxSubArray(nums []int) int {
 	max, dp := nums[0], nums[0]
 	for i := 1; i < len(nums); i++ {
