@@ -1,7 +1,6 @@
 package leetcode
 
 import (
-	"C"
 	"log"
 	"os"
 )

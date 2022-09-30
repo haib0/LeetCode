@@ -4,8 +4,8 @@
  * [633] 平方数之和
  */
 
-#include "corecrt_math.h"
-#include <vcruntime.h>
+#include <cmath>
+using namespace std;
 
 // @lc code=start
 class Solution {
