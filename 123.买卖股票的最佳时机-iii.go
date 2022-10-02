@@ -15,6 +15,7 @@ func maxProfit3(prices []int) int {
 	}
 
 	// k: buy counts
+	// 0/1: if has stock
 	n, maxK := len(prices), 2
 	dp := make([][][]int, n)
 	for i := 0; i < n; i++ {
