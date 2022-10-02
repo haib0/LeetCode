@@ -6,16 +6,23 @@
 package leetcode
 
 // @lc code=start
+
 func isSubsequence(s string, t string) bool {
+	var si, ti int
+	for si < len(s) && ti < len(t) {
+		if s[si] == t[ti] {
+			si++
+		}
+		ti++
+	}
+	return si == len(s)
+}
+
+func isSubsequenceBS(s string, t string) bool {
 	m := make(map[rune][]int)
 
 	for i, r := range t {
-		if l, ok := m[r]; ok {
-			m[r] = append(l, i)
-
-		} else {
-			m[r] = []int{i}
-		}
+		m[r] = append(m[r], i)
 	}
 
 	j := 0
