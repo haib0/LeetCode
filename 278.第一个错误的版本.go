@@ -15,6 +15,7 @@ package leetcode
  */
 
 func firstBadVersion(n int) int {
+	var isBadVersion func(version int) bool
 	lo, hi := 1, n
 	for lo < hi {
 		mid := (lo + hi) / 2

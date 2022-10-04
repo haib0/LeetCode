@@ -6,7 +6,7 @@
 package leetcode
 
 // @lc code=start
-func findMin(nums []int) int {
+func findMinII(nums []int) int {
 	low := 0
 	high := len(nums) - 1
 	for low < high {
