@@ -16,9 +16,7 @@ func solve(board [][]byte) {
 		if i < 0 || i >= m || j < 0 || j >= n || board[i][j] != 'O' {
 			return
 		}
-
 		board[i][j] = '#'
-
 		dfs(i-1, j)
 		dfs(i+1, j)
 		dfs(i, j-1)
@@ -29,7 +27,6 @@ func solve(board [][]byte) {
 		dfs(0, j)
 		dfs(m-1, j)
 	}
-
 	for i := 0; i < m; i++ {
 		dfs(i, 0)
 		dfs(i, n-1)

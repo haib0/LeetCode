@@ -11,16 +11,12 @@ func maxAreaOfIsland(grid [][]int) int {
 	row, col := len(grid), len(grid[0])
 
 	var dfs func(x, y int) int
-
 	dfs = func(x, y int) int {
 		if x < 0 || x >= row || y < 0 || y >= col || grid[x][y] == 0 {
 			return 0
 		}
-
 		grid[x][y] = 0
-
 		return dfs(x-1, y) + dfs(x, y-1) + dfs(x+1, y) + dfs(x, y+1) + 1
-
 	}
 
 	for i := 0; i < row; i++ {
