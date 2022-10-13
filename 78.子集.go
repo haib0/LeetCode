@@ -15,10 +15,8 @@ func subsets(nums []int) [][]int {
 	var trace []int
 	var backtracking func(start int)
 	backtracking = func(start int) {
-		traceCopy := make([]int, len(trace))
-		copy(traceCopy, trace)
-		ans = append(ans, traceCopy)
-		if len(traceCopy) == n {
+		ans = append(ans, append([]int{}, trace...))
+		if len(trace) == n {
 			return
 		}
 
