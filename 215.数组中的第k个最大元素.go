@@ -7,6 +7,26 @@ package leetcode
 
 // @lc code=start
 func findKthLargest(nums []int, k int) int {
+	partition := func(nums []int, lo, hi int) int {
+		pivot := nums[lo]
+
+		i, j := lo+1, hi
+		for i <= j {
+			for i < hi && nums[i] <= pivot {
+				i++
+			}
+			for j > lo && nums[j] > pivot {
+				j--
+			}
+			if i >= j {
+				break
+			}
+			nums[i], nums[j] = nums[j], nums[i]
+		}
+		nums[lo], nums[j] = nums[j], nums[lo]
+		return j
+	}
+
 	k = len(nums) - k
 	lo, hi := 0, len(nums)-1
 
@@ -22,26 +42,6 @@ func findKthLargest(nums []int, k int) int {
 	}
 
 	return -1
-}
-
-func partition(nums []int, lo, hi int) int {
-	pivot := nums[lo]
-
-	i, j := lo+1, hi
-	for i <= j {
-		for i < hi && nums[i] <= pivot {
-			i++
-		}
-		for j > lo && nums[j] > pivot {
-			j--
-		}
-		if i >= j {
-			break
-		}
-		nums[i], nums[j] = nums[j], nums[i]
-	}
-	nums[lo], nums[j] = nums[j], nums[lo]
-	return j
 }
 
 // @lc code=end
