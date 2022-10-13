@@ -67,7 +67,6 @@ func isQueenOk(chess [][]rune, x, y int) bool {
 		if ltx >= 0 && lty >= 0 && chess[ltx][lty] != '.' {
 			return false
 		}
-
 		rtx, rty := x-i, y+i
 		if rtx >= 0 && rty < n && chess[rtx][rty] != '.' {
 			return false
